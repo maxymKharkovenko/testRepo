@@ -1,0 +1,21 @@
+<div>
+
+    <h1>USER list</h1>
+
+
+    <input #myInput type="text" />
+
+    <div *ngIf="isShowCollection">
+
+        <li   *ngFor="#item of collection">
+            <span>{{ item.name }}</span>
+        </li>
+
+    </div>
+
+    <button (click)="showAllUsers()">show user</button>
+
+
+
+
+</div>
