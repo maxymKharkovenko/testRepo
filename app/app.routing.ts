@@ -1,22 +1,21 @@
-import {TodoComponent} from './directives/todo'
-
 import { Routes, RouterModule } from '@angular/router';
 
+import { HeroesComponent } from './heroes.component';
+import { DashboardComponent } from './dashboard.component';
+
 const appRoutes: Routes = [
-    { path: 'todo', component: TodoComponent },
-    {
-        path: 'heroes',
-        component: TodoComponent,
-        data: {
-            title: 'Heroes List'
-        }
-    },
-    { path: 'hero/:id', component: TodoComponent },
-    { path: '**', component: TodoComponent }
+  {
+    path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: 'heroes',
+    component: HeroesComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
 ];
-
-export const appRoutingProviders: any[] = [
-
-];
-
 export const routing = RouterModule.forRoot(appRoutes);

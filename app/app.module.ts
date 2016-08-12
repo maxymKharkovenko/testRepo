@@ -1,36 +1,30 @@
-import {Component} from 'angular2/core';
-export class User {
-    pass: number;
-    name: string;
-}
-@Component({
-    selector: 'login-component',
-    template: `
-    <h1>{{title}}</h1>
-   
-    <div style="padding-bottom: 100px">
-      <label>Name user: </label>
-      <input [(ngModel)]="user.name" placeholder="name">
-      
-      
-      
-       <label>Password: </label>
-       <input [(ngModel)]="user.pass" placeholder="pass">
-      
-       <button (click)="login()">Login</button>
-    </div>
-   
-    `
+
+import { NgModule }       from '@angular/core';
+import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule }    from '@angular/forms';
+
+import { AppComponent }   from './app.component';
+import { routing }        from './app.routing';
+
+import { HeroesComponent }  from './heroes.component';
+
+import { DashboardComponent } from './dashboard.component';
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    FormsModule,
+    routing
+  ],
+  declarations: [
+    AppComponent,
+    HeroesComponent,
+    DashboardComponent
+  ],
+  providers: [
+
+  ],
+  bootstrap: [ AppComponent ]
 })
-export class TestComponent {
-    title = 'Login';
-    user: User = {
-        pass: 11,
-        name: 'MAXEM'
-    };
-
-    login() {
-        alert("password: " + this.user.pass + "\n" + "login name: " + this.user.name)
-    }
-
+export class AppModule {
 }
