@@ -1,30 +1,23 @@
-
-import { NgModule }       from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { BrowserModule  } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule, XHRBackend } from '@angular/http';
 
 import { AppComponent }   from './app.component';
-import { routing }        from './app.routing';
+import { AppRoutingModule, routedComponents } from './app-routing.module';
+import { CharacterService } from './character.service'
 
-import { HeroesComponent }  from './heroes.component';
-
-import { DashboardComponent } from './dashboard.component';
+import {HeaderComponent} from './directives/customHeader/customHeader'
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    HttpModule,
+    AppRoutingModule,
   ],
-  declarations: [
-    AppComponent,
-    HeroesComponent,
-    DashboardComponent
-  ],
-  providers: [
-
-  ],
-  bootstrap: [ AppComponent ]
+  declarations: [AppComponent, routedComponents, HeaderComponent],
+  providers: [CharacterService],
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule { }

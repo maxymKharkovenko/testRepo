@@ -1,8 +1,15 @@
 import { Component } from '@angular/core';
 
 @Component({
+  moduleId: module.id,
   selector: 'my-dashboard',
-  //template: '<h3>My Dashboard</h3>'
-  templateUrl: 'app/dashboard.component.html',
+	templateUrl: 'dashboard.component.html'
 })
-export class DashboardComponent { }
+export class DashboardComponent {
+	name = 'john';
+	message = '';
+
+	sayHello() {
+		this.message = 'Hello ' + this.name + '!';
+	}
+}

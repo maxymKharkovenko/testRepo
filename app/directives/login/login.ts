@@ -1,36 +1,42 @@
 import {Component} from '@angular/core';
+import {SecurityService} from '../../services/securitySvc';
+
+
 export class User {
-  pass: number;
+  pass: string;
   name: string;
 }
 @Component({
   selector: 'login-component',
+  providers: [SecurityService],
+  styleUrls: ['/app/directives/login-component.css'],
   template: `
-    <h1>{{title}}</h1>
-   
-    <div style="padding-bottom: 100px">
-      <label>Name user: </label>
-      <input [(ngModel)]="user.name" placeholder="name">
-      
-      
-      
-       <label>Password: </label>
-       <input [(ngModel)]="user.pass" placeholder="pass">
-      
-       <button (click)="login()">Login</button>
+     
+    <div class="login-block">
+        <h1>{{title}}</h1>
+        <input type="text" [(ngModel)]="user.name" placeholder="Username" id="username" />
+        <input type="password" [(ngModel)]="user.pass" placeholder="Password" id="password" />
+        <button (click)="login()">Submit</button>
     </div>
-   
+    
+ 
     `
 })
+
 export class LoginComponent {
+  constructor(private SecurityService: SecurityService) {
+
+  }
+
+
   title = 'Login';
   user: User = {
-    pass: 11,
+    pass: 'asd',
     name: 'MAXEM'
   };
 
   login() {
-    alert("password: " + this.user.pass + "\n" + "login name: " + this.user.name)
+    this.SecurityService.login(this.user.name, this.user.pass);
   }
 
 }

@@ -1,23 +1,18 @@
-
 import { Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import {LoginComponent} from './directives/login/login'
+
+import { CharacterService } from './character.service';
 import {HeaderComponent} from './directives/customHeader/customHeader'
-import {TableComponent} from './directives/customTable/customTable'
-
-import {TodoComponent} from './directives/todo/todo'
 
 @Component({
   selector: 'my-app',
-  templateUrl:'/app/pages/main.html',
-  directives:[LoginComponent,HeaderComponent,TableComponent,TodoComponent]
+  template: `
+    <a [routerLink]="['/dashboard']">Dashboard</a>
+    <a [routerLink]="['/characters']">Characters</a>
+    <main-header></main-header>
+    <router-outlet></router-outlet>
+    `
 })
 
-
-export class AppComponent {
-  title = 'Tour s Heroes';
-  data = {
-    users:[{pass: 11, name: 'Mr. Nice'},
-      {pass: 20, name: 'Tornado'}]
-  }
-}
+export class AppComponent { }

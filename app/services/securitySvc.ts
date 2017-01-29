@@ -7,7 +7,25 @@ export class SecurityService {
   constructor() {
 
   }
-  public login() {
-    console.log('Login page')
+
+  public user = {
+    name : '',
+    pass : '',
+  };
+
+  public login(name: string, pass: string) {
+
+    this.user.name = name;
+    this.user.pass = pass;
+
+    alert("password: " + pass + "\n" + "login name: " + name);
+
+  }
+
+  public getUser() {
+
+    return this.user;
+
   }
 }
+
