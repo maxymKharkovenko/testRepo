@@ -11,15 +11,12 @@ export class User {
   providers: [SecurityService],
   styleUrls: ['/app/directives/login-component.css'],
   template: `
-     
     <div class="login-block">
         <h1>{{title}}</h1>
         <input type="text" [(ngModel)]="user.name" placeholder="Username" id="username" />
         <input type="password" [(ngModel)]="user.pass" placeholder="Password" id="password" />
         <button (click)="login()">Submit</button>
     </div>
-    
- 
     `
 })
 

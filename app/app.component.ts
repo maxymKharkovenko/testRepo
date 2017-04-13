@@ -8,8 +8,6 @@ import {HeaderComponent} from './directives/customHeader/customHeader'
 @Component({
   selector: 'my-app',
   template: `
-    <a [routerLink]="['/dashboard']">Dashboard</a>
-    <a [routerLink]="['/characters']">Characters</a>
     <main-header></main-header>
     <router-outlet></router-outlet>
     `
