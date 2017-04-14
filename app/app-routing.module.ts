@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 
 import {LoginComponent} from './directives/login/login';
 import {TableComponent} from './directives/customTable/customTable';
+import {ContactsComponent} from './directives/contacts/contacts';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard'},
@@ -14,10 +15,9 @@ export const routes: Routes = [
 
   { path: 'dashboard', component: DashboardComponent},
   { path: 'characters', component: CharactersComponent},
-  { path: 'home', component: CharactersComponent},
+  { path: 'home', component: TableComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'about', component: TableComponent},
-  { path: 'contact', redirectTo: 'dashboard', pathMatch: 'full'},
+  { path: 'contact', component: ContactsComponent},
 
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent}
 
@@ -29,4 +29,4 @@ export const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routedComponents = [DashboardComponent, CharactersComponent, PageNotFoundComponent, LoginComponent, TableComponent];
+export const routedComponents = [DashboardComponent, CharactersComponent, PageNotFoundComponent, LoginComponent, TableComponent, ContactsComponent];

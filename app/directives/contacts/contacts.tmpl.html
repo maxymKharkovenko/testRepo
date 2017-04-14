@@ -1,0 +1,110 @@
+<div class="slide" id="slide5" data-slide="5" data-stellar-background-ratio="0.5">
+  <div class="container clearfix">
+    <div class="content grid_2 contactype active" (click)="mapClick();" [ngClass]="{'active': contactMap}" id="contact-mapClick">
+      <div class="icon-map"></div>
+      <p>Map</p>
+    </div>
+    <div class="content grid_2 contactype" (click)="carClick();" [ngClass]="{'active': contactCar}" id="contact-carClick">
+      <div class="icon-car"></div>
+      <p>Car</p>
+    </div>
+    <div class="content grid_2 contactype" (click)="busClick();" [ngClass]="{'active': contactBus}" id="contact-busClick">
+      <div class="icon-bus"></div>
+      <p>Bus</p>
+    </div>
+
+    <div class="content grid_2 contactype" (click)="bikeClick();" [ngClass]="{'active': contactBike}" id="contact-bikeClick">
+      <div class="icon-bicycle"></div>
+      <p>Bicycle</p>
+    </div>
+    <div class="content grid_2 contactype" (click)="phoneClick();" [ngClass]="{'active': contactPhone}" id="contact-phoneClick">
+      <div class="icon-phone"></div>
+      <p>Phone</p>
+    </div>
+    <div class="content grid_2 contactype omega" (click)="mailClick();" [ngClass]="{'active': contactMail}" id="contact-mailClick">
+      <div class="icon-mail"></div>
+      <p>E-Mail</p>
+    </div>
+
+    <div class="content grid_12 contactmap"  *ngIf="contactMap" id="contact-map">
+      <div class="grid_4">
+        <h2>CONTACT</h2>
+        <p class="information"><span class="icon-location"> ADDRESS: </span>Vinnica</p>
+        <p class="information"><span class="icon-phone-2"> PHONE: </span> (093) 99-86-575</p>
+        <a class="btn" href="http://goo.gl/maps/8GlbZ" target="_blank">Get Direction</a>
+        <div class="clear"></div>
+      </div>
+      <div class="grid_8 omega">
+        <div id="map_canvas"></div>
+      </div>
+    </div>
+
+    <div class="content grid_12 contactmap dn" *ngIf="contactCar" id="contact-car">
+      <div class="grid_4">
+        <h2>CAR</h2>
+        <p class="information"><span class="icon-location"> ADDRESS: </span>Vinnica</p>
+        <br><br>
+        <div class="btn"><span class="icon-checkmark"></span> Car Park</div>
+      </div>
+      <div class="grid_8 omega">
+        <div class="grid_6 omega">
+          <a class="btn" href="http://goo.gl/maps/8GlbZ" target="_blank">Get Direction</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content grid_12 contactmap dn" *ngIf="contactBus" id="contact-bus">
+      <div class="grid_4">
+        <h2>BUS</h2>
+        <p class="information"><span class="icon-location"> ADDRESS: </span>Vinnica</p>
+        <br><br>
+        <div class="btn"><span class="icon-checkmark"></span> Bus station</div>
+      </div>
+      <div class="grid_8 omega">
+        <div class="grid_6 omega" id="scroll2">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="content grid_12 contactmap dn" *ngIf="contactBike" id="contact-bike">
+      <div class="grid_4">
+        <h2>BIKE</h2>
+        <p class="information"><span class="icon-location"> ADDRESS: </span>Vinnica</p>
+        <br><br>
+      </div>
+      <div class="grid_8 omega">
+        <div class="grid_6 omega">
+          <span class="icon-calendar"> Vinnica</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="content grid_12 contactmap dn" *ngIf="contactPhone" id="contact-phone">
+      <div class="grid_4">
+        <h2>TELEPHONE</h2>
+        <p class="information"><span class="icon-location"> ADDRESS: </span>Vinnica</p>
+      </div>
+      <div class="grid_8 omega">
+        <div class="grid_6 omega"> (093) 99-86-575</div>
+      </div>
+    </div>
+
+    <div class="content grid_12 contactmap dn" *ngIf="contactMail" id="contact-mail">
+      <div class="grid_4">
+        <h2>E-MAIL</h2>
+        <p class="information"><span class="icon-location"> ADDRESS: </span>Vinnica</p>
+      </div>
+      <div class="grid_8 omega">
+
+        <div class="grid_6 omega">
+          <span>maxKharkovenko@gmail.com</span>
+          <a href="mailto:mail@loremipsum.com?Subject=Hello" class="btn">Send email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+
+  </div>
+</div>

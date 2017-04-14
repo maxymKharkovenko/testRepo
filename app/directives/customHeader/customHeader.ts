@@ -15,13 +15,20 @@ import { headerService } from './header-service';
 
 export class HeaderComponent {
 
-
-
   constructor(private SecurityService: SecurityService) {
 
   }
+  isUserAuthorized: boolean = this.getData();
+
+  getData (): boolean{
+    return this.SecurityService.mainData.userAuthorized
+  }
   onLogin (){
-    //this.SecurityService.login();
-    window.location.href = 'todo'
+    this.isUserAuthorized = this.SecurityService.mainData.userAuthorized;
+    console.log(this.SecurityService.mainData.userAuthorized);
+  }
+  onLogout (){
+    this.isUserAuthorized = this.SecurityService.mainData.userAuthorized = false;
+    localStorage.removeItem('user');
   }
 }
