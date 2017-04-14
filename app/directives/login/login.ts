@@ -9,22 +9,14 @@ export class User {
 @Component({
   selector: 'login-component',
   providers: [SecurityService],
-  styleUrls: ['/app/directives/login-component.css'],
-  template: `
-    <div class="login-block">
-        <h1>{{title}}</h1>
-        <input type="text" [(ngModel)]="user.name" placeholder="Username" id="username" />
-        <input type="password" [(ngModel)]="user.pass" placeholder="Password" id="password" />
-        <button (click)="login()">Submit</button>
-    </div>
-    `
+  styleUrls: ['app/directives/login/login-component.css'],
+  templateUrl:'/app/directives/login/login.tmpl.html',
 })
 
 export class LoginComponent {
   constructor(private SecurityService: SecurityService) {
 
   }
-
 
   title = 'Login';
   user: User = {
