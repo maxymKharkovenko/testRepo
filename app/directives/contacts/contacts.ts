@@ -1,6 +1,5 @@
 import {Component, ElementRef} from '@angular/core';
 
-
 @Component({
   selector: 'contacts-component',
   styleUrls: ['app/directives/contacts/contacts.css'],
@@ -11,6 +10,10 @@ export class ContactsComponent {
   constructor(public element: ElementRef) {
 
   }
+
+  lat: number = 49.2340115;
+  lng: number = 28.4485162;
+
   contactMap : boolean = true;
   contactCar : boolean = false;
   contactBus : boolean = false;
@@ -48,6 +51,17 @@ export class ContactsComponent {
   mailClick(){
     this.resetState();
     this.contactMail = true;
+  }
+
+
+  setPosition(position:any){
+    this.lat = position.coords.latitude;
+    this.lng = position.coords.longitude;
+  }
+  ngOnInit(){
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
+    }
   }
 
 }

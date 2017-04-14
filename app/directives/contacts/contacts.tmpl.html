@@ -35,7 +35,13 @@
         <div class="clear"></div>
       </div>
       <div class="grid_8 omega">
-        <div id="map_canvas"></div>
+        <div id="map_canvas">
+
+          <sebm-google-map [latitude]="lat" [longitude]="lng">
+            <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+          </sebm-google-map>
+
+        </div>
       </div>
     </div>
 

@@ -12,6 +12,7 @@ var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var app_routing_module_1 = require("./app-routing.module");
+var core_2 = require("angular2-google-maps/core");
 var character_service_1 = require("./character.service");
 var customHeader_1 = require("./directives/customHeader/customHeader");
 var AppModule = (function () {
@@ -26,6 +27,7 @@ AppModule = __decorate([
             forms_1.FormsModule,
             http_1.HttpModule,
             app_routing_module_1.AppRoutingModule,
+            core_2.AgmCoreModule.forRoot()
         ],
         declarations: [app_component_1.AppComponent, app_routing_module_1.routedComponents, customHeader_1.HeaderComponent],
         providers: [character_service_1.CharacterService],

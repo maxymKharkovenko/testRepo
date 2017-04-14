@@ -5,6 +5,8 @@ import { HttpModule, XHRBackend } from '@angular/http';
 
 import { AppComponent }   from './app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
+import { AgmCoreModule } from 'angular2-google-maps/core';
+
 import { CharacterService } from './character.service'
 
 import {HeaderComponent} from './directives/customHeader/customHeader'
@@ -15,6 +17,7 @@ import {HeaderComponent} from './directives/customHeader/customHeader'
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    AgmCoreModule.forRoot()
   ],
   declarations: [AppComponent, routedComponents, HeaderComponent],
   providers: [CharacterService],

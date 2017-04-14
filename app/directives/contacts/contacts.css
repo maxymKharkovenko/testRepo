@@ -22,6 +22,12 @@ a:visited {
   text-decoration: none;
 }
 
+
+/*map*/
+.sebm-google-map-container {
+  height: 300px;
+}
+
 /* Computer */
 .grid_1 { width: 6.5%; }
 .grid_2 { width: 15%; }
