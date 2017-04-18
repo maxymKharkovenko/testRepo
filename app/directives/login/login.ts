@@ -8,7 +8,7 @@ export class User {
 }
 @Component({
   selector: 'login-component',
-  providers: [SecurityService],
+  providers: [],
   styleUrls: ['app/directives/login/login-component.css'],
   templateUrl:'/app/directives/login/login.tmpl.html',
 })

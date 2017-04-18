@@ -8,7 +8,7 @@ import { headerService } from './header-service';
 
 @Component({
   selector: 'main-header',
-  providers: [SecurityService, headerService],
+  providers: [headerService],
   templateUrl: '/app/directives/customHeader/header.tmpl.html',
 })
 
@@ -31,4 +31,13 @@ export class HeaderComponent {
     this.isUserAuthorized = this.SecurityService.mainData.userAuthorized = false;
     localStorage.removeItem('user');
   }
+
+  ngOnInit() {
+    this.SecurityService.userDataUpdated.subscribe(
+      (isUserAuthorized: any) => {
+        this.isUserAuthorized = this.SecurityService.mainData.userAuthorized;
+      }
+    );
+  }
+
 }

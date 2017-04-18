@@ -15,6 +15,7 @@ var app_routing_module_1 = require("./app-routing.module");
 var core_2 = require("angular2-google-maps/core");
 var character_service_1 = require("./character.service");
 var customHeader_1 = require("./directives/customHeader/customHeader");
+var securitySvc_1 = require("./services/securitySvc");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -30,7 +31,7 @@ AppModule = __decorate([
             core_2.AgmCoreModule.forRoot()
         ],
         declarations: [app_component_1.AppComponent, app_routing_module_1.routedComponents, customHeader_1.HeaderComponent],
-        providers: [character_service_1.CharacterService],
+        providers: [character_service_1.CharacterService, securitySvc_1.SecurityService],
         bootstrap: [app_component_1.AppComponent],
     })
 ], AppModule);

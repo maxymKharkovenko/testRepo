@@ -10,6 +10,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { CharacterService } from './character.service'
 
 import {HeaderComponent} from './directives/customHeader/customHeader'
+import {SecurityService} from './services/securitySvc';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import {HeaderComponent} from './directives/customHeader/customHeader'
     AgmCoreModule.forRoot()
   ],
   declarations: [AppComponent, routedComponents, HeaderComponent],
-  providers: [CharacterService],
+  providers: [CharacterService, SecurityService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
